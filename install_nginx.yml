@@ -3,10 +3,10 @@
   become: yes
   tasks:
     - name: Install nginx
-      ansible.builtin.yum:
+      ansible.builtin.apt:
         name: nginx
         state: present
-
+        update_cache:yes
     - name: Start nginx service
       ansible.builtin.service:
         name: nginx
