@@ -1,0 +1,9 @@
+- name: Create a custom message file
+  hosts: all
+  vars:
+    my_message: "Hello from Ansible!"
+  tasks:
+    - name: Create message.txt
+      ansible.builtin.copy:
+        content: "{{ my_message }}"
+        dest: /tmp/message.txt
